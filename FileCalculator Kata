@@ -1,0 +1,26 @@
+public class FileCalculatorKata {
+
+    public static void main(String[] args) {
+        String input = args[0];
+        String operation = args[1];
+
+        List<String> line = Files.readAllLines(Paths.get(input), StandardCharsets.UTF_8);
+        int sum = 0;
+        if (operation == "*") {
+            sum = 1;
+        }
+
+        for ( String s : line) {
+            switch (operation) {
+                case "+":
+                    sum += Integer.parseInt(s);
+                    System.out.println(sum);
+                    break;
+                case "*":
+                    sum *= Integer.parseInt(s);
+                    System.out.println(sum);
+                    break;
+            }
+        }
+    }
+}
